@@ -12,6 +12,6 @@ public interface TestService {
 
     //Y
     List<Test> findAll();
-    List<Test> findAllTestByTopicYId(Long id);
+    List<Test> findAllTestByTopicId(Long id);
     List<Question> getQuestionsByTestName(String topic);
 }

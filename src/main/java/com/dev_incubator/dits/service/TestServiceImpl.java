@@ -38,8 +38,8 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public List<Test> findAllTestByTopicYId(Long id) {
-        return testRepository.findAllTestByTopicYId(id);
+    public List<Test> findAllTestByTopicId(Long id) {
+        return testRepository.findAllTestByTopicId(id);
     }
 
     @Override

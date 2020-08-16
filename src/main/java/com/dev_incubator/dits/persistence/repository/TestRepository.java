@@ -16,8 +16,8 @@ public interface TestRepository extends JpaRepository<Test, Long> {
     List<Test> findAllByTopic(Topic topic);
 
     //Y
-    List<Test> findAllTestByTopicYId(Long id);
-    List<Question> getTestsByTopicYName(String topic);
+    List<Test> findAllTestByTopicId(Long id);
+    List<Question> getTestsByTopicName(String topic);
     @Query("select questions from Test where name = ?1")
     List<Question> getQuestionsByTestName(String name);
 }

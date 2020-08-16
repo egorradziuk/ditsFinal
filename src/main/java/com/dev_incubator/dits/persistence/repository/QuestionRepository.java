@@ -12,6 +12,6 @@ import java.util.Set;
 public interface QuestionRepository extends JpaRepository<Question, Long> {
 
     //Y
-    @Query("from Answer where questionY.id = ?1")
+    @Query("from Answer where question.id = ?1")
     Set<Answer> getAnswersByQuestionId(Long id);
 }
