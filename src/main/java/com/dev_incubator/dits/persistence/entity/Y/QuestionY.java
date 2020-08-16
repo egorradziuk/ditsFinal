@@ -1,4 +1,5 @@
-package com.dev_incubator.dits.persistence.entity;
+/*
+package com.dev_incubator.dits.persistence.entity.Y;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -35,8 +36,10 @@ public class QuestionY {
     private List<StatisticY> statisticsY;
 
     //todo change to oneToMany
-    /*@OneToOne(mappedBy = "questionY", fetch = FetchType.EAGER)
-    private LiteratureY literatureY;*/
+    */
+/*@OneToOne(mappedBy = "questionY", fetch = FetchType.EAGER)
+    private LiteratureY literatureY;*//*
+
     @OneToMany(mappedBy = "questionY")
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<LiteratureY> literatureY;
@@ -53,3 +56,4 @@ public class QuestionY {
     }
 
 }
+*/

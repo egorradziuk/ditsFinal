@@ -23,13 +23,13 @@
             <tbody>
                 <c:forEach items="${statistic}" var="stat">
                     <tr>
-                        <td> ${stat.getQuestionY().getDescription()}</td>
+                        <td> ${stat.getQuestion().getDescription()}</td>
                         <td> ${stat.isCorrect()}</td>
                         <td>
                             <table class="table table-hover table-sm">
                                 <tbody>
                                     <c:forEach
-                                            items="${stat.getQuestionY().getLiteratureY()}"
+                                            items="${stat.getQuestion().getLiterature()}"
                                             var="literature">
                                         <tr>
                                             <th>
@@ -44,10 +44,11 @@
                             <table class="table table-hover table-sm">
                                 <tbody>
                                 <c:forEach
-                                        items="${stat.getQuestionY().getLiteratureY()}"
+                                        items="${stat.getQuestion().getLiterature()}"
                                         var="literature">
                                     <c:forEach
-                                            items="${literature.getLinkY()}" var="link">
+                                            items="${literature.getLinks()}"
+                                            var="link">
                                         <tr>
                                             <th>
                                                 ${link.getLink()}

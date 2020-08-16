@@ -1,10 +1,11 @@
-package com.dev_incubator.dits.service;
+/*
+package com.dev_incubator.dits.service.Y;
 
-import com.dev_incubator.dits.persistence.entity.QuestionY;
-import com.dev_incubator.dits.persistence.entity.StatisticY;
-import com.dev_incubator.dits.persistence.entity.UserY;
-import com.dev_incubator.dits.persistence.repository.StatisticRepositoryY;
-import com.dev_incubator.dits.service.interfaces.StatisticServiceY;
+import com.dev_incubator.dits.persistence.entity.Y.QuestionY;
+import com.dev_incubator.dits.persistence.entity.Y.StatisticY;
+import com.dev_incubator.dits.persistence.entity.Y.UserY;
+import com.dev_incubator.dits.persistence.repository.Y.StatisticRepositoryY;
+import com.dev_incubator.dits.service.interfaces.Y.StatisticServiceY;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,3 +51,4 @@ public class StatisticServiceImplY implements StatisticServiceY {
         return statisticRepositoryY.getAllByDate(date);
     }
 }
+*/

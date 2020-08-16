@@ -1,8 +1,9 @@
-package com.dev_incubator.dits.service.interfaces;
+/*
+package com.dev_incubator.dits.service.interfaces.Y;
 
-import com.dev_incubator.dits.persistence.entity.QuestionY;
-import com.dev_incubator.dits.persistence.entity.StatisticY;
-import com.dev_incubator.dits.persistence.entity.UserY;
+import com.dev_incubator.dits.persistence.entity.Y.QuestionY;
+import com.dev_incubator.dits.persistence.entity.Y.StatisticY;
+import com.dev_incubator.dits.persistence.entity.Y.UserY;
 
 import java.sql.Timestamp;
 import java.util.HashMap;
@@ -18,3 +19,4 @@ public interface StatisticServiceY {
     List<StatisticY> findAllByDate(Timestamp date);
     List<StatisticY> getAllByDate(Timestamp date);
 }
+*/

@@ -1,8 +1,9 @@
-package com.dev_incubator.dits.persistence.repository;
+/*
+package com.dev_incubator.dits.persistence.repository.Y;
 
-import com.dev_incubator.dits.persistence.entity.QuestionY;
-import com.dev_incubator.dits.persistence.entity.StatisticY;
-import com.dev_incubator.dits.persistence.entity.UserY;
+import com.dev_incubator.dits.persistence.entity.Y.QuestionY;
+import com.dev_incubator.dits.persistence.entity.Y.StatisticY;
+import com.dev_incubator.dits.persistence.entity.Y.UserY;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -25,3 +26,4 @@ public interface StatisticRepositoryY extends JpaRepository<StatisticY, Long> {
     @Query("from StatisticY where date = ?1")
     List<StatisticY> getAllByDate(Timestamp date);
 }
+*/

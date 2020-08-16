@@ -1,7 +1,8 @@
-package com.dev_incubator.dits.persistence.repository;
+/*
+package com.dev_incubator.dits.persistence.repository.Y;
 
-import com.dev_incubator.dits.persistence.entity.QuestionY;
-import com.dev_incubator.dits.persistence.entity.TestY;
+import com.dev_incubator.dits.persistence.entity.Y.QuestionY;
+import com.dev_incubator.dits.persistence.entity.Y.TestY;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -17,3 +18,4 @@ public interface TestRepositoryY extends JpaRepository<TestY, Long> {
     @Query("select questionsY from TestY where name = ?1")
     List<QuestionY> getQuestionsByTestName(String name);
 }
+*/

@@ -1,12 +1,9 @@
 package com.dev_incubator.dits.controller;
 
 import com.dev_incubator.dits.persistence.entity.Topic;
-import com.dev_incubator.dits.persistence.entity.TopicY;
-import com.dev_incubator.dits.service.interfaces.TestServiceY;
+import com.dev_incubator.dits.service.interfaces.TestService;
 import com.dev_incubator.dits.service.interfaces.TopicService;
-import com.dev_incubator.dits.service.interfaces.TopicServiceY;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +18,9 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class ChooseTestControllerY {
 
 
-    private final TopicServiceY topicService;
+    private final TopicService topicService;
 
-    private final TestServiceY testService;
+    private final TestService testService;
 
     @GetMapping(value = "/chooseTest")
     public String ChooseTest(Model model) {
@@ -35,13 +32,13 @@ public class ChooseTestControllerY {
     @ResponseBody
     public List<String> searchTestName(@RequestParam(value = "topic",
             required = false) String topic) {
-        List<String> list = topicService.findTestsByTopicY(topic);
+        List<String> list = topicService.findTestsByTopic(topic);
         return list;
     }
 
     @GetMapping(value = "/getThemes")
     public String goTest(@RequestParam(value = "topic", required = false)
-                                 TopicY topic, Model model) {
+                                 Topic topic, Model model) {
         model.addAttribute("tests", testService.findAll());
         return "testPage";
     }

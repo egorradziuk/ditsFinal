@@ -1,4 +1,5 @@
-package com.dev_incubator.dits.persistence.entity;
+/*
+package com.dev_incubator.dits.persistence.entity.Y;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,18 +10,14 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Topic")
+@Table(name = "Test")
 @Setter
 @Getter
-public class TopicY {
+public class TestY {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @OneToMany(mappedBy = "topicY")
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private List<TestY> testsY;
 
     @Column(name = "name")
     private String name;
@@ -28,4 +25,14 @@ public class TopicY {
     @Column(name = "description")
     private String description;
 
+
+    @ManyToOne
+    @JoinColumn(name = "topic_id")
+    private TopicY topicY;
+
+    @OneToMany(mappedBy = "testY")
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<QuestionY> questionsY;
+
 }
+*/

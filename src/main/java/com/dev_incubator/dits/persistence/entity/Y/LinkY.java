@@ -1,4 +1,5 @@
-package com.dev_incubator.dits.persistence.entity;
+/*
+package com.dev_incubator.dits.persistence.entity.Y;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -18,10 +19,13 @@ public class LinkY {
     @Column(name = "link")
     private String link;
 
-    /*//todo manyToOne
+    */
+/*//*
+/todo manyToOne
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "literature_id")
-    private LiteratureY literatureY;*/
+    private LiteratureY literatureY;*//*
+
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "literature_id")
@@ -35,3 +39,4 @@ public class LinkY {
     }
 
 }
+*/

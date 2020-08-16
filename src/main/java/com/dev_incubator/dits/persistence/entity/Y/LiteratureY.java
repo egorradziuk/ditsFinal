@@ -1,4 +1,5 @@
-package com.dev_incubator.dits.persistence.entity;
+/*
+package com.dev_incubator.dits.persistence.entity.Y;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,8 +22,10 @@ public class LiteratureY {
     @Column(name = "description")
     private String description;
 
-    /*@Column(name = "question_id")
-    private int questionId;*/
+    */
+/*@Column(name = "question_id")
+    private int questionId;*//*
+
 
 
 //    @OneToOne(fetch = FetchType.EAGER)
@@ -32,9 +35,12 @@ public class LiteratureY {
     @JoinColumn(name = "question_id")
     private QuestionY questionY;
 
-    /*//todo oneToMany
+    */
+/*//*
+/todo oneToMany
     @OneToOne(mappedBy = "literatureY", fetch = FetchType.EAGER)
-    private LinkY linkY;*/
+    private LinkY linkY;*//*
+
     @OneToMany(mappedBy = "literatureY")
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<LinkY> linkY;
@@ -48,3 +54,4 @@ public class LiteratureY {
     }
 
 }
+*/

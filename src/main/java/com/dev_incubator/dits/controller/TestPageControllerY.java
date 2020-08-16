@@ -2,9 +2,7 @@ package com.dev_incubator.dits.controller;
 
 import com.dev_incubator.dits.config.security.CustomUserDetails;
 import com.dev_incubator.dits.exception.TopicNotFoundException;
-import com.dev_incubator.dits.persistence.entity.AnswerY;
-import com.dev_incubator.dits.persistence.entity.QuestionY;
-import com.dev_incubator.dits.persistence.entity.StatisticY;
+import com.dev_incubator.dits.persistence.entity.*;
 import com.dev_incubator.dits.service.interfaces.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,13 +22,13 @@ public class TestPageControllerY {
     private static CustomUserDetails user;
     private static int max;
     private static Timestamp date;
-    private static List<QuestionY> questionList;
+    private static List<Question> questionList;
 
     @Autowired
-    private UserServiceY userService;
+    private UserService userService;
 
     @Autowired
-    private TestServiceY testService;
+    private TestService testService;
 
     @Autowired
     private QuestionServiceY questionService;
@@ -39,7 +37,7 @@ public class TestPageControllerY {
     private AnswerServiceY answerService;
 
     @Autowired
-    private StatisticServiceY statisticService;
+    private StatisticService statisticService;
 
 
     @GetMapping(value = "/goTest")
@@ -59,13 +57,17 @@ public class TestPageControllerY {
     }
 
     @GetMapping(value = "/nextTestPage")
-    public String nextTestPage1(
-            @RequestParam(value = "choosenAns", defaultValue = "-1") Long id,
-            ModelMap modelMap) {
+    public String nextTestPage(
+            @RequestParam(value = "choosenAns", defaultValue = "-1") Long
+                    id, ModelMap modelMap) {
         if (id != -1) {
             changeCorrectValue(answerService.getCorrectByDescription(id));
         }
         counter++;
+        return chooseNextPage(modelMap);
+    }
+
+    public String chooseNextPage(ModelMap modelMap) {
         if (counter < max) {
             modelMap.addAttribute("questions", questionList.get(counter)
                     .getDescription());
@@ -83,14 +85,11 @@ public class TestPageControllerY {
         clearCounter();
         modelMap.addAttribute("statistic",
                 statisticService.getAllByDate(date));
-        System.out.println(statisticService.getAllByDate(date).toString());
         return "resultPageY";
     }
 
     @GetMapping(value = "/logout")
     public String logout() {
-        /*fillTestDB();
-        statisticService.saveMapOfStat(StatisticService.statList, Calendar.getInstance().getTime());*/
         clearCounter();
         return "main";
     }
@@ -98,37 +97,36 @@ public class TestPageControllerY {
     private void initVariables(String testName) {
         user = (CustomUserDetails) SecurityContextHolder.getContext()
                 .getAuthentication().getPrincipal();
-
         date = new Timestamp(new Date().getTime());
-        StatisticServiceY.statList.clear();
+        StatisticService.statList.clear();
         questionList = testService.getQuestionsByTestName(testName);
         max = questionList.size();
     }
 
-    private StatisticY configureStatistic() {
-        StatisticY statistic = new StatisticY();
+    private Statistic configureStatistic() {
+        Statistic statistic = new Statistic();
         statistic.setCorrect(false);
-        statistic.setQuestionY(questionList.get(counter));
-        statistic.setUserY(userService.findUserById(user.getId()));
+        statistic.setQuestion(questionList.get(counter));
+        statistic.setUser(userService.findUserById(user.getId()));
         statistic.setDate(date);
         return statistic;
     }
 
     void fillTestDB() {
-        while (StatisticServiceY.statList.size() != max) {
+        while (StatisticService.statList.size() != max) {
             statisticService.statList
                     .put(String.valueOf(questionList.get(counter)
                             .getId()), configureStatistic());
             counter++;
         }
-        statisticService.saveMapOfStat(StatisticServiceY.statList, date);
+        statisticService.saveMapOfStat(StatisticService.statList, date);
         clearCounter();
     }
 
-    private void changeCorrectValue(AnswerY answer) {
+    private void changeCorrectValue(Answer answer) {
         if (answer.isCorrect()) {
-            statisticService.changeCorrectValue(date, userService
-                            .findUserById(user.getId()),
+            statisticService.changeCorrectValue(date,
+                    userService.findUserById(user.getId()),
                     questionList.get(counter), answer.isCorrect());
         }
     }

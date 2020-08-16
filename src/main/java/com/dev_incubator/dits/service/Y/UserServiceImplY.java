@@ -1,9 +1,9 @@
-package com.dev_incubator.dits.service;
+/*
+package com.dev_incubator.dits.service.Y;
 
-import com.dev_incubator.dits.persistence.entity.UserY;
-import com.dev_incubator.dits.persistence.repository.UserRepository;
-import com.dev_incubator.dits.persistence.repository.UserRepositoryY;
-import com.dev_incubator.dits.service.interfaces.UserServiceY;
+import com.dev_incubator.dits.persistence.entity.Y.UserY;
+import com.dev_incubator.dits.persistence.repository.Y.UserRepositoryY;
+import com.dev_incubator.dits.service.interfaces.Y.UserServiceY;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,3 +20,4 @@ public class UserServiceImplY implements UserServiceY {
         return userRepositoryY.findUserById(id);
     }
 }
+*/

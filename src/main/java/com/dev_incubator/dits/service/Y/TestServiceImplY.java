@@ -1,9 +1,10 @@
-package com.dev_incubator.dits.service;
+/*
+package com.dev_incubator.dits.service.Y;
 
-import com.dev_incubator.dits.persistence.entity.QuestionY;
-import com.dev_incubator.dits.persistence.entity.TestY;
-import com.dev_incubator.dits.persistence.repository.TestRepositoryY;
-import com.dev_incubator.dits.service.interfaces.TestServiceY;
+import com.dev_incubator.dits.persistence.entity.Y.QuestionY;
+import com.dev_incubator.dits.persistence.entity.Y.TestY;
+import com.dev_incubator.dits.persistence.repository.Y.TestRepositoryY;
+import com.dev_incubator.dits.service.interfaces.Y.TestServiceY;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,3 +34,4 @@ public class TestServiceImplY implements TestServiceY {
         return testRepositoryY.getQuestionsByTestName(name);
     }
 }
+*/

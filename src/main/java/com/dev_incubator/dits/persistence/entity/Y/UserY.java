@@ -1,4 +1,5 @@
-package com.dev_incubator.dits.persistence.entity;
+/*
+package com.dev_incubator.dits.persistence.entity.Y;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -35,3 +36,4 @@ public class UserY {
     private Set<RoleY> roleY = new HashSet<>();
 
 }
+*/
