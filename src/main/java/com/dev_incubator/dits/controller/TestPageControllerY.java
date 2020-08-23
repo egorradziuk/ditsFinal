@@ -37,8 +37,6 @@ public class TestPageControllerY {
 
     private StatisticService statisticService;
 
-//    private ChooseTestControllerY chooseTestControllerY;
-
     private final TopicService topicService;
 
     @GetMapping(value = "/goTest")
@@ -55,18 +53,10 @@ public class TestPageControllerY {
         } else {
             model.addAttribute("topics", topicService.findAll());
             return "userChoose";
-            //return "redirect:/chooseTest";
-            //return chooseTestControllerY.chooseTest(model);
-            //throw new TopicNotFoundException("");
         }
         return "testPageY";
     }
 
-//    @GetMapping(value = "/chooseTest")
-//    public String redirect(Model model) {
-//        model.addAttribute("topics", topicService.findAll());
-//        return "userChoose";
-//    }
 
     @GetMapping(value = "/nextTestPage")
     public String nextTestPage(
