@@ -4,10 +4,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<%--<head>
-    <title>Title</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>--%>
 
 <form action="/goTest" >
     <select id="themes" name="themes" class="browser-default custom-select">
@@ -34,13 +30,13 @@
             <svg class=" rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg"
                  preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
                 <rect fill="#007aff" width="100%" height="100%" /></svg>
-            <strong class="mr-auto">Attention</strong>
+            <strong class="mr-auto">Attention!</strong>
             <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="toast-body">
-            You has selected the test which haven't got the questions.
+            Selected test has no questions.
         </div>
     </div>
 </form>
