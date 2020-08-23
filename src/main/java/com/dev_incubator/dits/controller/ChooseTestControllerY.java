@@ -23,7 +23,7 @@ public class ChooseTestControllerY {
     private final TestService testService;
 
     @GetMapping(value = "/chooseTest")
-    public String ChooseTest(Model model) {
+    public String chooseTest(Model model) {
         model.addAttribute("topics", topicService.findAll());
         return "userChoose";
     }

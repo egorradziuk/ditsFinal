@@ -4,9 +4,11 @@ import com.dev_incubator.dits.config.security.CustomUserDetails;
 import com.dev_incubator.dits.exception.TopicNotFoundException;
 import com.dev_incubator.dits.persistence.entity.*;
 import com.dev_incubator.dits.service.interfaces.*;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
+@AllArgsConstructor
 public class TestPageControllerY {
 
     private static int counter;
@@ -24,24 +27,23 @@ public class TestPageControllerY {
     private static Timestamp date;
     private static List<Question> questionList;
 
-    @Autowired
     private UserService userService;
 
-    @Autowired
     private TestService testService;
 
-    @Autowired
     private QuestionServiceY questionService;
 
-    @Autowired
     private AnswerServiceY answerService;
 
-    @Autowired
     private StatisticService statisticService;
 
+//    private ChooseTestControllerY chooseTestControllerY;
+
+    private final TopicService topicService;
 
     @GetMapping(value = "/goTest")
-    public String goTest(@RequestParam String testName, ModelMap modelMap) {
+    public String goTest(@RequestParam String testName, ModelMap modelMap,
+                         Model model) {
         clearCounter();
         initVariables(testName);
         fillTestDB();
@@ -51,10 +53,20 @@ public class TestPageControllerY {
             modelMap.addAttribute("answers", questionService.getAnswersByQuestionId
                     (questionList.get(counter).getId()));
         } else {
-            throw new TopicNotFoundException("");
+            model.addAttribute("topics", topicService.findAll());
+            return "userChoose";
+            //return "redirect:/chooseTest";
+            //return chooseTestControllerY.chooseTest(model);
+            //throw new TopicNotFoundException("");
         }
         return "testPageY";
     }
+
+//    @GetMapping(value = "/chooseTest")
+//    public String redirect(Model model) {
+//        model.addAttribute("topics", topicService.findAll());
+//        return "userChoose";
+//    }
 
     @GetMapping(value = "/nextTestPage")
     public String nextTestPage(

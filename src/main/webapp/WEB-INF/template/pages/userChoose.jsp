@@ -22,10 +22,27 @@
     </select>
     <br>
     <div class="text-center py-2 mt-3">
-        <button class="btn btn-success" name="submit" type="submit">take the
+        <button class="btn btn-success" name="submit" type="submit"
+                id="submit-button" disabled>take the
             test</button>
     </div>
-    <%--<input type="submit" value="пройти тестирование" class="btn aqua-gradient">--%>
+
+
+    <div id="alertt" role="alert" aria-live="assertive" aria-atomic="true"
+         class="toast" data-autohide="false">
+        <div class="toast-header">
+            <svg class=" rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg"
+                 preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                <rect fill="#007aff" width="100%" height="100%" /></svg>
+            <strong class="mr-auto">Attention</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            You has selected the test which haven't got the questions.
+        </div>
+    </div>
 </form>
 
 

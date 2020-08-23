@@ -35,7 +35,7 @@
                         <a class="dropdown-item" href="/tests/delete">Delete</a>
                     </sec:authorize>
                     <sec:authorize access="hasAnyAuthority('USER')">
-                        <a class="dropdown-item" href="<%=application.getContextPath()%>/choose/chooseTest">Pass</a>
+                        <a class="dropdown-item" href="<%=application.getContextPath()%>/choose/chooseTest" onclick="changeStorage()">Pass</a>
                     </sec:authorize>
                 </div>
             </li>
