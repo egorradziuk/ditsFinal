@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 @AllArgsConstructor
@@ -17,5 +19,35 @@ public class AnswerServiceImplY implements AnswerServiceY {
     @Override
     public Answer getCorrectByDescription(Long id) {
         return answerRepository.getCorrectByDescription(id);
+    }
+
+    @Override
+    public Answer getById(long id) {
+        return answerRepository.getById(id);
+    }
+
+    @Override
+    public List<Answer> findAll() {
+        return answerRepository.findAll();
+    }
+
+    @Override
+    public List<Answer> getAnswerByQuestion(Long id) {
+        return answerRepository.getAnswersByQuestion(id);
+    }
+
+    @Override
+    public void add(Answer answer) {
+        answerRepository.saveAndFlush(answer);
+    }
+
+    @Override
+    public void update(Answer answer) {
+        answerRepository.saveAndFlush(answer);
+    }
+
+    @Override
+    public void delete(long id) {
+        answerRepository.deleteById(id);
     }
 }

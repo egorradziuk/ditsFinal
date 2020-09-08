@@ -14,4 +14,13 @@ public interface TestService {
     List<Test> findAll();
     List<Test> findAllTestByTopicId(Long id);
     List<Question> getQuestionsByTestName(String topic);
+
+    //AA
+    Test getById(long id);
+
+    List<Test> getByTopicId(long id);
+
+    List<Test> getByTopicIdForEdit(long id);
+
+    void add(Test test);
 }

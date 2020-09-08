@@ -26,4 +26,29 @@ public class QuestionServiceImplY implements QuestionServiceY {
     public List<Answer> getAnswersByQuestionId(Long id) {
         return questionRepository.getAnswersByQuestionId(id);
     }
+    //AA
+    @Override
+    public Question getById(long id) {
+        return questionRepository.getById(id);
+    }
+
+    @Override
+    public List<Question> getByTestForEdit(long id) {
+        return questionRepository.getByTestForEdit(id);
+    }
+
+    @Override
+    public void add(Question question) {
+        questionRepository.saveAndFlush(question);
+    }
+
+    @Override
+    public void update(Question question) {
+        questionRepository.saveAndFlush(question);
+    }
+
+    @Override
+    public void delete(Long id) {
+        questionRepository.deleteById(id);
+    }
 }

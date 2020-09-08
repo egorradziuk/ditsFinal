@@ -104,4 +104,9 @@ public class TopicServiceImpl implements TopicService {
     public List<String> findTestsByTopic(String name) {
         return topicRepository.findTestsByTopic(name);
     }
+
+    @Override
+    public Topic getById(Long id) {
+        return topicRepository.getById(id);
+    }
 }

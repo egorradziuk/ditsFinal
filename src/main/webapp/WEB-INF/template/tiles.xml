@@ -49,10 +49,6 @@
         <put-attribute name="title" value="DITS | userChoose" />
         <put-attribute name="content" value="/WEB-INF/template/pages/userChoose.jsp" />
     </definition>
-    <definition name="userTest" extends="layout.definition">
-        <put-attribute name="title" value="DITS | userTest" />
-        <put-attribute name="content" value="/WEB-INF/template/pages/userTest.jsp" />
-    </definition>
     <definition name="testPageY" extends="layout.definition">
         <put-attribute name="title" value="DITS | testPageY" />
         <put-attribute name="content" value="/WEB-INF/template/pages/testPageY.jsp" />
@@ -76,5 +72,55 @@
     <definition name="405" extends="layout.definition">
         <put-attribute name="title" value="DITS | Error" />
         <put-attribute name="content" value="/WEB-INF/template/pages/errors/405.jsp" />
+    </definition>
+    <definition name="500" extends="layout.definition">
+        <put-attribute name="title" value="DITS | Error" />
+        <put-attribute name="content" value="/WEB-INF/template/pages/errors/500.jsp" />
+    </definition>
+
+    <definition name="addQuestion" extends="layout.definition">
+        <put-attribute name="title" value="DITS | Create Test" />
+        <put-attribute name="content" value="/WEB-INF/template/pages/addQuestion.jsp" />
+    </definition>
+    <definition name="editAnswer" extends="layout.definition">
+        <put-attribute name="title" value="DITS | Edit Test" />
+        <put-attribute name="content" value="/WEB-INF/template/pages/editAnswer.jsp" />
+    </definition>
+    <definition name="addAnswer" extends="layout.definition">
+        <put-attribute name="title" value="DITS | Edit Test" />
+        <put-attribute name="content" value="/WEB-INF/template/pages/addAnswer.jsp" />
+    </definition>
+
+    <definition name="editQuestion" extends="layout.definition">
+        <put-attribute name="title" value="DITS | Edit Test" />
+        <put-attribute name="content" value="/WEB-INF/template/pages/editQuestion.jsp" />
+    </definition>
+
+    <definition name="getTests" extends="layout.definition">
+        <put-attribute name="title" value="DITS | Create Test" />
+        <put-attribute name="content" value="/WEB-INF/template/pages/getTests.jsp" />
+    </definition>
+    <definition name="questionListForTest" extends="layout.definition">
+        <put-attribute name="title" value="DITS | Edit Test" />
+        <put-attribute name="content" value="/WEB-INF/template/pages/questionListForTest.jsp" />
+    </definition>
+    <definition name="editQuestionsAndAnswers" extends="layout.definition">
+        <put-attribute name="title" value="DITS | Edit Test" />
+        <put-attribute name="content" value="/WEB-INF/template/pages/editQuestionsAndAnswers.jsp" />
+    </definition>
+
+    <definition name="addLink" extends="layout.definition">
+        <put-attribute name="title" value="DITS | Edit Test" />
+        <put-attribute name="content" value="/WEB-INF/template/pages/addLink.jsp" />
+    </definition>
+
+    <definition name="addLiterature" extends="layout.definition">
+        <put-attribute name="title" value="DITS | Edit Test" />
+        <put-attribute name="content" value="/WEB-INF/template/pages/addLiterature.jsp" />
+    </definition>
+
+    <definition name="editLiterature" extends="layout.definition">
+        <put-attribute name="title" value="DITS | Edit Test" />
+        <put-attribute name="content" value="/WEB-INF/template/pages/editLiterature.jsp" />
     </definition>
 </tiles-definitions>

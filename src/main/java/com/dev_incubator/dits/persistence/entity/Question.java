@@ -1,5 +1,6 @@
 package com.dev_incubator.dits.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,10 +21,12 @@ public class Question {
     @ManyToOne(optional = false)
     @JoinColumn(name = "test_id", nullable = false, foreignKey = @ForeignKey(name = "question_test_FK"))
     private Test test;
+    @JsonIgnore //AA
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "question")
     private Set<Literature> literature = new HashSet<>();
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "question")
     private Set<Answer> answers = new HashSet<>();
+    @JsonIgnore //AA
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "question")
     private Set<Statistic> statistics = new HashSet<>();
 }

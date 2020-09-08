@@ -48,4 +48,24 @@ public class TestServiceImpl implements TestService {
         return testRepository.getQuestionsByTestName(name);
     }
 
+    //AA
+    @Override
+    public Test getById(long id) {
+        return testRepository.getById(id);
+    }
+
+    @Override
+    public List<Test> getByTopicId(long id) {
+        return testRepository.getByTopicId(id);
+    }
+
+    @Override
+    public List<Test> getByTopicIdForEdit(long id) {
+        return testRepository.getByTopicIdForEdit(id);
+    }
+
+    @Override
+    public void add(Test test) {
+        testRepository.save(test);
+    }
 }

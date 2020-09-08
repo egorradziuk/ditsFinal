@@ -1,11 +1,9 @@
 package com.dev_incubator.dits.controller;
 
 import com.dev_incubator.dits.config.security.CustomUserDetails;
-import com.dev_incubator.dits.exception.TopicNotFoundException;
 import com.dev_incubator.dits.persistence.entity.*;
 import com.dev_incubator.dits.service.interfaces.*;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
