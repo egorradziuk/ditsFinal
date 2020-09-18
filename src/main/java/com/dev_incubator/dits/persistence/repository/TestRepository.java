@@ -21,6 +21,8 @@ public interface TestRepository extends JpaRepository<Test, Long> {
     @Query("select questions from Test where name = ?1")
     List<Question> getQuestionsByTestName(String name);
 
+    void deleteTestById(Long id);
+
     //AA
     @Query("FROM Test t WHERE t.id=:id")
     Test getById(@Param("id") long id);

@@ -44,8 +44,14 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public List<Question> getQuestionsByTestName(String name) {
-
         return testRepository.getQuestionsByTestName(name);
+    }
+
+    @Override
+    public void deleteTestById(Long id) {
+        if(testRepository.findById(id).isPresent()) {
+            testRepository.deleteTestById(id);
+        }
     }
 
     //AA
