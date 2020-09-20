@@ -15,6 +15,7 @@ public interface TestService {
     List<Test> findAllTestByTopicId(Long id);
     List<Question> getQuestionsByTestName(String topic);
     void deleteTestById(Long id);
+    Test findTestById(Long id);
 
     //AA
     Test getById(long id);

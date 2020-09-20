@@ -54,6 +54,11 @@ public class TestServiceImpl implements TestService {
         }
     }
 
+    @Override
+    public Test findTestById(Long id) {
+        return testRepository.findTestById(id);
+    }
+
     //AA
     @Override
     public Test getById(long id) {

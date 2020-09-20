@@ -9,22 +9,6 @@
     </div>
 </div>
 
-<%--<ul class="list-group">--%>
-<%--    <li class="list-group-item d-flex justify-content-between align-items-center">--%>
-<%--        Cras justo odio--%>
-<%--        <span class="badge badge-primary badge-pill">14</span>--%>
-<%--    </li>--%>
-<%--    <li class="list-group-item d-flex justify-content-between align-items-center">--%>
-<%--        Dapibus ac facilisis in--%>
-<%--        <span class="badge badge-primary badge-pill">2</span>--%>
-<%--    </li>--%>
-<%--    <li class="list-group-item d-flex justify-content-between align-items-center">--%>
-<%--        Morbi leo risus--%>
-<%--        <span class="badge badge-primary badge-pill">1</span>--%>
-<%--    </li>--%>
-<%--</ul>--%>
-
-
 <c:if test="${!empty listTopicsWithTests}">
 <div class="accordion" id="accordion01">
 
@@ -88,7 +72,7 @@
                                                 </c:forEach>
                                             </ol>
                                         </td>
-                                        <td><a href="<%=application.getContextPath()%>/tests/edit/${test.id}"><i class="fas fa-edit"></i></a></td>
+                                        <%--<td><a href="<%=application.getContextPath()%>/tests/edit/${test.id}"><i class="fas fa-edit"></i></a></td>--%>
                                         <td><a href="<%=application.getContextPath()%>/tests/delete/${test.id}"><i class="fas fa-trash-alt"></i></a></td>
                                     </tr>
                                 </c:forEach>

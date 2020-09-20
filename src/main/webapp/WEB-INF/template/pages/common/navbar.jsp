@@ -16,7 +16,7 @@
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-00" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Statistics </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-00">
                     <sec:authorize access="hasAnyAuthority('ADMIN', 'TUTOR')">
-                        <a class="dropdown-item" href="<%=application.getContextPath()%>/statistic/by-tests">By test</a>
+                        <a class="dropdown-item" href="<%=application.getContextPath()%>/statistic/by-tests">By tests</a>
                         <a class="dropdown-item" href="<%=application.getContextPath()%>/statistic/by-questions">By questions</a>
                         <a class="dropdown-item" href="<%=application.getContextPath()%>/statistic/by-users">By users</a>
                     </sec:authorize>
@@ -32,7 +32,7 @@
                         <a class="dropdown-item" href="/tests">All tests</a>
                         <a class="dropdown-item" href="/tests/create">Create</a>
                         <a class="dropdown-item" href="/tests/edit">Edit</a>
-                        <a class="dropdown-item" href="/tests/delete">Delete</a>
+                        <a class="dropdown-item" href="/tests">Delete</a>
                     </sec:authorize>
                     <sec:authorize access="hasAnyAuthority('USER')">
                         <a class="dropdown-item" href="<%=application.getContextPath()%>/choose/chooseTest" onclick="changeStorage()">Pass</a>

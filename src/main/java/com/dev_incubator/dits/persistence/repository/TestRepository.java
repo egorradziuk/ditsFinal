@@ -22,6 +22,7 @@ public interface TestRepository extends JpaRepository<Test, Long> {
     List<Question> getQuestionsByTestName(String name);
 
     void deleteTestById(Long id);
+    Test findTestById(Long id);
 
     //AA
     @Query("FROM Test t WHERE t.id=:id")

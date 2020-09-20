@@ -67,7 +67,7 @@
                                                     </tr>
                                                 </c:forEach>
                                             </table>
-                                            <a href="<c:url value="/addLink/${literature.id}/${test.id}"/>">Add Link</a>
+                                            <%--<a href="<c:url value="/addLink/${literature.id}/${test.id}"/>">Add Link</a>--%>
                                         </th>
                                     </tr>
                                 </c:forEach>

@@ -62,9 +62,9 @@ var setTests = function (data) {
     var submitButton = document.getElementById('submit-button');
     submitButton.disabled = false;
 
-    $('#tests').find('option').remove();
+    $('#testss').find('option').remove();
     $.each(data, function (index, value) {
-        $('#tests').append(new Option(value, value));
+        $('#testss').append(new Option(value, value));
     });
 
     var alertBlock = document.getElementById('alertt');

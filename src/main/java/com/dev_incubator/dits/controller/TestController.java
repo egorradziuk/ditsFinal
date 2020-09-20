@@ -48,13 +48,22 @@ public class TestController {
         return modelAndView;
     }
 
+    @GetMapping(value = "/edit/{testId}")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public String editTest(@PathVariable(value = "testId", required =
+            true) Long testId, RedirectAttributes redirectAttributes) {
+        testService.findTestById(testId);
+
+        return "redirect:/tests";
+    }
+
     @GetMapping(value = "/delete/{testId}")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     public String deleteTest(@PathVariable(value = "testId", required =
             true) Long testId, RedirectAttributes redirectAttributes) {
         testService.deleteTestById(testId);
         redirectAttributes.addFlashAttribute("report", messageSource
-                .getMessage("test.delete.success"));
+                .getMessage("The test deleted successfully."));
         return "redirect:/tests";
     }
 }
